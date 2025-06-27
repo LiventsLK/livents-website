@@ -9,12 +9,13 @@ function Navbar() {
                 <img src="src\assets\navbar-logo.svg" alt="" />
             </div>
             <div className="navbar-links">
-                <a href="#about">About</a>
-                <a href="#services">Services</a>
-                <a href="#contact">Contact</a>
+                <a href="#about">Home</a>
+                <a href="#services">About</a>
+                <a href="#contact">Services</a>
+                <a href="#contact">Gallery</a>
             </div>
             <button className="contact-btn">
-                Contact
+                Contact us
             </button>
         </div>
     </nav>
