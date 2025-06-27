@@ -1,0 +1,16 @@
+.navbar-container{
+    position: absolute;
+    top: 1rem;
+    width: 100%;
+
+    .navbar-wrapper{
+        background-color: var(--black-100);
+        display: flex;
+        max-width: 80rem;
+        margin: 0 auto; 
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 1.5rem;
+        border-radius: 1.5rem;
+    }
+}
