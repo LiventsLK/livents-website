@@ -64,7 +64,7 @@ export default function LogoScene() {
       onPointerOut={() => setIsHovered(false)}
     >
       <ambientLight intensity={1.5} />
-      <directionalLight position={[5, 5, 5]} intensity={1} />
+      <directionalLight position={[-2, 2, 10]} intensity={2} />
       
       <Suspense fallback={null}>
         <Model scale={0.5} isHovered={isHovered}/>
