@@ -5,7 +5,7 @@
   box-sizing: border-box;
   font-family: "Inter", sans-serif;
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  color: rgba(0, 0, 0, 0.87);
   background-color: #ffffff;
 
   font-synthesis: none;
@@ -15,6 +15,7 @@
 
   /* black colors */
   --black-100: #000000;
+  --black-90: #1a1a1a;
   --black-0: #ffffff;
 
   /* text color */

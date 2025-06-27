@@ -1,0 +1,71 @@
+.hero-container{
+    background-image: url("../assets/textured-background.svg");
+    height: 100svh;
+    width: 100%;
+    position: relative;
+
+    .hero-content-wrapper{
+        background-color: var(--white-100);
+        width: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 70rem;
+        height: calc(100% - 7rem);
+        bottom: 1rem;
+        position: absolute;
+        z-index: 50;
+        display: flex;
+        align-items: center;
+        border-radius: 1.5rem;
+        overflow: hidden;
+
+        .left-image-wrapper{
+            flex: 1; 
+            height: 100%;
+            pointer-events: none;
+            position: relative; 
+        }
+
+        .right-content-wrapper{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 1rem;
+            gap: 1rem;
+            width: 40%;
+            height: 100%;
+            
+            .main-heading{
+                color: var(--black-90);
+                font-weight: 800;
+                font-size: 2.5rem;
+            }
+
+            .description{
+                color: #666666;
+                font-size: 0.75rem;
+                font-weight: 500;
+            }
+
+            .action-btn{
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                background-color: var(--black-100);
+                border: 1px solid var(--black-100);
+                width: fit-content;
+                border-radius: 6.25rem;
+                color: var(--black-0);
+                padding: 0.5rem 0.875rem;
+                cursor: pointer;
+                font-weight: 500;
+                font-size: 0.875rem;
+                font-family: "Inter", sans-serif !important;
+
+                img{
+                    width: 1rem;
+                }
+            }
+        }
+    }
+}
