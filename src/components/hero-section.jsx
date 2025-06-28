@@ -1,7 +1,6 @@
 import React, { Suspense, useRef } from 'react';
 import './hero-section.scss';
 import LogoScene from './logoScene';
-
 function Hero(){
     const containerRef = useRef();
 
@@ -9,6 +8,7 @@ function Hero(){
         <div className="hero-container">
             <div className="hero-content-wrapper">
                 <div className="left-image-wrapper">
+                    
                     <Suspense fallback={<div>Loading 3D...</div>}>
                         <LogoScene eventSource={containerRef}/>
                     </Suspense>

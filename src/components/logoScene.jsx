@@ -4,6 +4,7 @@ import React, { useRef, useEffect, Suspense, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { useGLTF } from '@react-three/drei';
 import * as THREE from 'three';
+import Stars from './Stars'; // Import your new Stars component
 
 function Model({ isHovered, ...props }) {
   const { scene } = useGLTF('/logo-model.gltf');
@@ -67,7 +68,8 @@ export default function LogoScene() {
       <directionalLight position={[-2, 2, 10]} intensity={2} />
       
       <Suspense fallback={null}>
-        <Model scale={0.5} isHovered={isHovered}/>
+        <Model scale={0.45} isHovered={isHovered}/>
+        <Stars />
       </Suspense>
     </Canvas>
   );

@@ -1,13 +1,14 @@
 .hero-container{
-    background-image: url("../assets/textured-background.svg");
+    // background-image: url("../assets/textured-background.svg");
     height: 100svh;
     width: 100%;
     display: flex;
     align-items: flex-end;
     justify-content: center;
+    background-color: #1a1a1a;
 
     .hero-content-wrapper{
-        background-color: var(--white-100);
+        background-color: var(--black-100);
         width: 100%;
         max-width: 70rem;
         height: calc(100% - 7rem);
@@ -35,13 +36,14 @@
             height: 100%;
             
             .main-heading{
-                color: var(--black-90);
+                // color: var(--black-90);
+                color: #f7f7f7;
                 font-weight: 800;
                 font-size: 2.5rem;
             }
 
             .description{
-                color: #666666;
+                color: #a3a3a3;
                 font-size: 0.75rem;
                 font-weight: 500;
             }
@@ -72,8 +74,11 @@
 
 @media screen and (max-width: 480px) {
     .hero-container{
+        padding: 0 0.75rem;
+
         .hero-content-wrapper{
             flex-direction: column;
+            height: calc(100% - 6rem);
 
             .left-image-wrapper{
                 width: 100%;
