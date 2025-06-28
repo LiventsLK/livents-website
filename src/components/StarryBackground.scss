@@ -1,0 +1,72 @@
+// src/components/StarryBackground.scss
+
+// ✅ FIX: Use the built-in 'sass:math' and 'sass:string' modules
+@use 'sass:math';
+@use 'sass:string';
+
+// The SCSS function is now updated to use the modern syntax
+@function multiple-box-shadow($n, $color) {
+  // Use math.random() instead of just random()
+  $value: '#{math.random(3000)}px #{math.random(3000)}px #{$color}';
+  @for $i from 2 through $n {
+    $value: '#{$value}, #{math.random(3000)}px #{math.random(3000)}px #{$color}';
+  }
+  // Use string.unquote() instead of just unquote()
+  @return string.unquote($value);
+}
+
+// These lines don't need to change, as they use the function above.
+// The variables like $color-primary are now globally available from your vite.config.js
+$shadows-small:  multiple-box-shadow(2500, rgba($color-white, 0.7));
+$shadows-medium: multiple-box-shadow(700,  rgba($color-white, 0.5));
+$shadows-large:  multiple-box-shadow(200,  rgba($color-white, 0.3));
+
+// --- The rest of the file remains the same ---
+.stars-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+#stars-small, #stars-medium, #stars-large {
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  position: absolute;
+  animation:
+    animStar 150s linear infinite,
+    animTwinkle 5s alternate infinite;
+}
+
+#stars-small {
+  box-shadow: $shadows-small;
+}
+
+#stars-medium {
+  width: 2px;
+  height: 2px;
+  box-shadow: $shadows-medium;
+  animation-duration: 100s, 6s;
+}
+
+#stars-large {
+  width: 3px;
+  height: 3px;
+  box-shadow: $shadows-large;
+  animation-duration: 50s, 7s;
+}
+
+@keyframes animStar {
+  from { transform: translateY(0px); }
+  to { transform: translateY(-3000px); }
+}
+
+@keyframes animTwinkle {
+  0% { opacity: 0.2; }
+  50% { opacity: 1; }
+  100% { opacity: 0.2; }
+}

@@ -1,6 +1,9 @@
 import React, { Suspense, useRef } from 'react';
 import './hero-section.scss';
 import LogoScene from './logoScene';
+import StarryBackground from './StarryBackground';
+import NextBtn from '../assets/btn-next.svg';
+
 function Hero(){
     const containerRef = useRef();
 
@@ -8,7 +11,7 @@ function Hero(){
         <div className="hero-container">
             <div className="hero-content-wrapper">
                 <div className="left-image-wrapper">
-                    
+                    <StarryBackground />
                     <Suspense fallback={<div>Loading 3D...</div>}>
                         <LogoScene eventSource={containerRef}/>
                     </Suspense>
@@ -22,7 +25,7 @@ function Hero(){
                     </div>
                     <button className="action-btn">
                         Let’s plan your event 
-                        <img src="src\assets\react.svg" alt="" />
+                        <img src={NextBtn} alt="next button icon" />
                     </button>
                     
                 </div>

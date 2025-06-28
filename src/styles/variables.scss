@@ -1,0 +1,117 @@
+// =============================================================================
+// GLOBAL DESIGN VARIABLES (TOKENS)
+// =============================================================================
+// This file acts as the single source of truth for all design-related values
+// in the project, such as colors, fonts, spacing, and breakpoints.
+
+// --- 1. Colors ---
+// Using a consistent color palette is key to good branding.
+
+// Brand Colors
+$color-primary: #f0a500; // Your main brand yellow
+$color-primary-light: #ffc400; // A lighter shade for hover effects
+$color-primary-dark: #d79400;  // A darker shade for active states
+
+// Neutral / Grayscale Palette
+$color-white: #ffffff;
+$color-black: #000000;
+$color-gray-100: #f8f9fa; // Very light gray
+$color-gray-300: #dee2e6; // Light gray for borders
+$color-gray-500: #adb5bd; // Muted text color
+$color-gray-700: #495057; // Darker text
+$color-gray-900: #212529; // Almost black
+
+// UI Feedback Colors (for alerts, success messages, etc.)
+$color-success: #28a745;
+$color-danger:  #dc3545;
+$color-warning: #ffc82c;
+$color-info:    #17a2b8;
+
+// Abstracted UI Colors (map brand colors to their purpose)
+$color-background: $color-white; // Main page background
+$color-surface: $color-white;    // For cards, popups, etc.
+$color-text: $color-gray-900;    // Main text color
+$color-text-muted: $color-gray-700;
+$color-border: $color-gray-300;
+$color-link: $color-primary;
+$color-link-hover: $color-primary-dark;
+
+
+// --- 2. Typography ---
+// Standardizing fonts ensures consistency and readability.
+
+// Font Families
+$font-family-main: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+// Base Font Size (used for 'rem' calculations)
+$font-size-base: 1rem; // Typically 16px
+
+// Font Size Scale
+$font-size-sm: $font-size-base * 0.875; // 14px
+$font-size-lg: $font-size-base * 1.25;  // 20px
+
+$font-size-h1: $font-size-base * 2.5;   // 40px
+$font-size-h2: $font-size-base * 2;     // 32px
+$font-size-h3: $font-size-base * 1.75;  // 28px
+$font-size-h4: $font-size-base * 1.5;   // 24px
+
+// Font Weights
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+$font-weight-black: 800;
+
+
+// --- 3. Spacing & Sizing ---
+// Using a spacing scale creates rhythmic and consistent layouts.
+
+$spacing-unit: 1rem; // Base unit is 16px
+
+$space-xs:  $spacing-unit * 0.25; // 4px
+$space-sm:  $spacing-unit * 0.5;  // 8px
+$space-md:  $spacing-unit;        // 16px
+$space-lg:  $spacing-unit * 1.5;  // 24px
+$space-xl:  $spacing-unit * 2;    // 32px
+$space-xxl: $spacing-unit * 3;    // 48px
+
+
+// --- 4. Layout & Breakpoints ---
+// Variables for responsive design and major layout components.
+
+// Max Width
+$max-width-container: 70rem; // The max-width you chose for your hero section
+
+// Navbar
+$height-navbar: 70px;
+
+// Breakpoints for Media Queries
+$breakpoint-sm: 576px;  // Small devices (phones)
+$breakpoint-md: 768px;  // Medium devices (tablets)
+$breakpoint-lg: 992px;  // Large devices (laptops)
+$breakpoint-xl: 1200px; // Extra large devices (desktops)
+
+
+// --- 5. Borders & Shadows ---
+// For consistent UI element styling.
+
+// Border Radius
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 16px;
+$border-radius-pill: 50rem;
+$border-radius-circle: 50%;
+
+// Box Shadows
+$shadow-sm: 0 0.125rem 0.25rem rgba($color-black, 0.075);
+$shadow-md: 0 0.5rem 1rem rgba($color-black, 0.15);
+$shadow-lg: 0 1rem 3rem rgba($color-black, 0.175);
+
+
+// --- 6. Transitions ---
+// Standardizing animations for a cohesive user experience.
+
+$transition-duration: 0.2s;
+$transition-timing-function: ease-in-out;
+$transition-main: all $transition-duration $transition-timing-function;
