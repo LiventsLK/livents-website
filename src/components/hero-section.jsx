@@ -8,15 +8,17 @@ function Hero(){
     const containerRef = useRef();
 
     return(
-        <div className="hero-container">
+        <div className="hero-container" ref={containerRef}>
             <div className="hero-content-wrapper">
+                
                 <div className="left-image-wrapper">
-                    <StarryBackground />
+                    
                     <Suspense fallback={<div>Loading 3D...</div>}>
                         <LogoScene eventSource={containerRef}/>
                     </Suspense>
                 </div>
                 <div className="right-content-wrapper">
+                    
                     <div className="main-heading">
                         Sri Lanka’s No 1 Event  Solutions Partner
                     </div>
@@ -30,6 +32,7 @@ function Hero(){
                     
                 </div>
             </div>
+            <StarryBackground />
         </div>
     );
 }
