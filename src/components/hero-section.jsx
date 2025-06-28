@@ -10,9 +10,8 @@ function Hero(){
     return(
         <div className="hero-container" ref={containerRef}>
             <div className="hero-content-wrapper">
-                
                 <div className="left-image-wrapper">
-                    
+                    <StarryBackground />
                     <Suspense fallback={<div>Loading 3D...</div>}>
                         <LogoScene eventSource={containerRef}/>
                     </Suspense>
