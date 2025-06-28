@@ -69,3 +69,12 @@
         }
     }
 }
+
+
+@media screen and (max-width: 480px) {
+    .hero-container{
+        .hero-content-wrapper{
+            flex-direction: column;
+        }
+    }
+}
