@@ -6,6 +6,7 @@ import useOnClickOutside from '../hooks/useOnClickOutside';
 function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const menuRef = useRef();
+    const hamburgerRef = useRef();
 
     useEffect(() => {
         const handleEscape = (event) => {
@@ -24,7 +25,8 @@ function Navbar() {
         setIsMenuOpen(!isMenuOpen);
     };
 
-    useOnClickOutside(menuRef, () => setIsMenuOpen(false));
+    useOnClickOutside(menuRef, hamburgerRef, () => setIsMenuOpen(false));
+    // useOnClickOutside(menuRef, () => setIsMenuOpen(false));
 
     return (
         <nav className="navbar-container">
@@ -41,22 +43,24 @@ function Navbar() {
                 <button className="contact-btn">
                     Contact us
                 </button>
-                <button className="hamburger-menu" onClick={toggleMenu}>
+                <button className="hamburger-menu ${isMenuOpen ? 'is-open' : ''}`}" onClick={toggleMenu}>
                     <div className="bar"></div>
                     <div className="bar"></div>
                     <div className="bar"></div>
                 </button>
+                <div ref={menuRef} className={`mobile-nav-panel ${isMenuOpen ? 'is-open' : ''}`}>
+                    <div className="mobile-nav-content">
+                        <a href="#about" onClick={toggleMenu}>Home</a>
+                        <div className="line"></div>
+                        <a href="#services" onClick={toggleMenu}>About</a>
+                        <div className="line"></div>
+                        <a href="#contact" onClick={toggleMenu}>Services</a>
+                        <div className="line"></div>
+                        <a href="#contact" onClick={toggleMenu}>Gallery</a>
+                    </div>
+                </div>
             </div>
-            <div ref={menuRef} className={`mobile-nav-panel ${isMenuOpen ? 'is-open' : ''}`}>
-                <button className="close-menu-btn" onClick={toggleMenu} aria-label="Close menu"></button>
-                <a href="#about" onClick={toggleMenu}>Home</a>
-                <div className="line"></div>
-                <a href="#services" onClick={toggleMenu}>About</a>
-                <div className="line"></div>
-                <a href="#contact" onClick={toggleMenu}>Services</a>
-                <div className="line"></div>
-                <a href="#contact" onClick={toggleMenu}>Gallery</a>
-            </div>
+            
         </nav>
     );
 }
